@@ -1,3 +1,5 @@
+#only extarcts last vowel
+
 def separate_characters(word):
   vowels = ['अ', 'आ', 'ऊ', 'ऋ', 'उ', 'इ', 'ऐ', 'ओ', 'ई', 'ए', 'औ']
   diacritics = ['ी', 'े', 'ॄ', 'ृ', 'ै', 'ॢ', 'ो', 'ौ', 'ा', 'ि', 'ु', 'ू']
