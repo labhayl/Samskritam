@@ -20,6 +20,8 @@ if input_text:
     st.success("Output:")
     st.text(output)
 
+st.caption(" In work is supported by Department of Science and Technology, (DST), Government of India under the project grant DST/TDT/SHRi-14/2021(C). ")
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}

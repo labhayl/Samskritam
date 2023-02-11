@@ -9,6 +9,10 @@ Ans-Eng: Kailāsaḥ is a website that separates a word into its constituent par
 """
 )
 
+st.subheader(" In work is supported by Department of Science and Technology, (DST), Government of India under the project grant DST/TDT/SHRi-14/2021(C). ")
+
+
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
