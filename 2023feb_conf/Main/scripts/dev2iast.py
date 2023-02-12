@@ -58,7 +58,7 @@ def iast(src):
         'ॠ': 'ṝ',
         'ऌ': 'ḷ',
         'ॡ': 'ḹ',
-        'ए': 'e', 
+        'ए': 'e',
         'ऐ': 'ai',
         'ओ': 'o',
         'औ': 'au',
@@ -78,24 +78,22 @@ def iast(src):
         '७': '7',
         '८': '8',
         '९': '9'}
-
-
-    iast_text = ''
+    tgt = ''
     inc = 0
     while inc < len(src):
         now = src[inc]
         nxt = src[inc+1] if inc < len(src) - 1 else None
         if now in consonants:
-            iast_text += consonants[now]
-            if nxt == '्':
+            tgt += consonants[now]
+            if nxt == '':
                 inc += 1
             elif nxt not in vowel_marks:
-                iast_text += 'a'
+                tgt += 'a'
         elif now in vowel_marks:
-            iast_text += vowel_marks[now]
+            tgt += vowel_marks[now]
         elif now in others:
-            iast_text += others[now]
+            tgt += others[now]
         else:
-            iast_text += now
+            tgt += now
         inc += 1
-    return iast_text
+    return tgt
