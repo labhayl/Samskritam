@@ -48,6 +48,8 @@ if input_text:
     st.text(dev_1)
     vowels = vowel_recognize(dev_1)
     st.text(vowels)
+    st.text(sandhi_final(vowels))
+    
     
 
 
