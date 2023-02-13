@@ -17,5 +17,5 @@ config = {
     'optimizer' : 'adam', # see Model::penult_and_classification for other values
     'has_lr_schedule' : 2,
     'use_split_cnts' : 1, # 1 = use split counts, 0 = don't
-    'model_directory' : '../Code/scripts/data/models' # for storing trained models
+    'model_directory' : '../Main/scripts/data/models' # for storing trained models
 }

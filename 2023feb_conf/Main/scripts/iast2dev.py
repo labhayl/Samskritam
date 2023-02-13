@@ -1,4 +1,4 @@
-def iast_to_dev(src):
+def devn(src):
     vowels = {
         'a': ['अ', ''],
         'ā': ['आ', 'ा'],
@@ -48,6 +48,7 @@ def iast_to_dev(src):
         'ṣ': 'ष',
         's': 'स',
         'h': 'ह'}
+        
     others = {
         'ṃ': 'ं',
         'ḥ': 'ः',
@@ -79,7 +80,7 @@ def iast_to_dev(src):
             elif dnxt in vowels:
                 boo = True
             else:
-                tgt += ''
+                tgt += '्'
             inc += 1
         elif now+nxt in vowels:
             if boo:
@@ -95,7 +96,7 @@ def iast_to_dev(src):
             elif nxt in vowels:
                 boo = True
             else:
-                tgt += ''
+                tgt += '्'
         elif now in vowels:
             if boo:
                 tgt += vowels[now][1]
@@ -121,5 +122,3 @@ def iast_to_dev(src):
             tgt += now
         inc += 1
     return tgt
-
-

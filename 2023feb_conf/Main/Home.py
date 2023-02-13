@@ -1,11 +1,16 @@
 import streamlit as st
-import subprocess
 import os 
-from scripts import dev2iast
+import scripts.dev2iast as d2i
+import scripts.iast2dev as i2d
 
 def dev_to_iast(input_text):
-    result = os.system("python dev2iast.py '{}'".format(input_text))
+    result = d2i.iast(input_text)
     return result.stdout.decode("utf-8")
+
+def iast_to_dev(input_text):
+    result = i2d.dev(input_text)
+    return result.stdout.decode("utf-8")
+
 
 def sandhi_split(iast_text):
     with open("iast.txt", "w", encoding="utf-8") as f:
@@ -28,13 +33,16 @@ st.subheader("संस्कृतम् व्याकरणम्")
 st.subheader("saṃskṛtam vyākaraṇam ")
 input_text = st.text_input("Enter input text / कृपया शब्दान् लिखन्तु : ")
 if input_text:
-    iast_1 = dev2iast.iast(input_text)
+    iast_1 = d2i.iast(input_text)
     st.success("Output:")
     st.text(iast_1)
     split_text = sandhi_split(iast_1)
     st.text(split_text)
-    dev_1 = iast_to_dev(split_text.replace('-', ' '))
+    split_text = split_text.replace('-', ' ')
+    st.text(split_text)
+    dev_1 = i2d.devn(str(split_text))
     st.text(dev_1)
+
 
 st.caption(" In work is supported by Department of Science and Technology, (DST), Government of India under the project grant DST/TDT/SHRi-14/2021(C). ")
 

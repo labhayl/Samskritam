@@ -22,7 +22,7 @@ path_out = path_in + '.unsandhied' if len(sys.argv) < 3 else sys.argv[2]
 
 config = configuration.config
 ''' load a partial data model '''
-with data_loader.DataLoader('../Code/scripts/data/input', config, load_data_into_ram=False, load_data = False) as data:
+with data_loader.DataLoader('../Main/scripts/data/input', config, load_data_into_ram=False, load_data = False) as data:
     graph_pred = tf.Graph()
     with graph_pred.as_default():
         with tf.Session(graph=graph_pred) as sess:
