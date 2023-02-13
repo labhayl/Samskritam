@@ -28,7 +28,10 @@ def get_vowels_diacritics(word):
           last_vowel = "अ"
     return first_vowel, last_vowel
     
-    
+#  Remove  the below lines from the function when it's done
+# 
+#      
+
 word = "राम"
 first_vowel,last_vowel=get_vowels_diacritics(word.ljust(8,' ')) # reducing whitespaces results in string out of bounds error with complex words , ex - रुद्र
 

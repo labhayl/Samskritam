@@ -2,14 +2,7 @@ import streamlit as st
 import os 
 import scripts.dev2iast as d2i
 import scripts.iast2dev as i2d
-
-def dev_to_iast(input_text):
-    result = d2i.iast(input_text)
-    return result.stdout.decode("utf-8")
-
-def iast_to_dev(input_text):
-    result = i2d.dev(input_text)
-    return result.stdout.decode("utf-8")
+import scripts.sandhi.vowel_convert as 
 
 
 def sandhi_split(iast_text):
@@ -20,6 +13,7 @@ def sandhi_split(iast_text):
         output = f.read()
     return output
 
+def vowel_recognize
 
 
 title_page = """
