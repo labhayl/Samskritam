@@ -2,7 +2,7 @@ import streamlit as st
 import os 
 import scripts.dev2iast as d2i
 import scripts.iast2dev as i2d
-import scripts.sandhi.vowel_convert as 
+import scripts.sandhi.vowel_conv
 
 
 def sandhi_split(iast_text):
