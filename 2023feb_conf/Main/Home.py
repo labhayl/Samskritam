@@ -2,7 +2,7 @@ import streamlit as st
 import os 
 import scripts.dev2iast as d2i
 import scripts.iast2dev as i2d
-import scripts.sandhi.vowel_conv
+import scripts.sandhi.vowel_convert as conv
 
 
 def sandhi_split(iast_text):
@@ -13,7 +13,12 @@ def sandhi_split(iast_text):
         output = f.read()
     return output
 
-def vowel_recognize
+def vowel_recognize(words):
+    #first_word = words[0]
+    #last_word = words[1]
+    st.text(words[0],words[1])
+    return 0
+
 
 
 title_page = """
@@ -34,8 +39,12 @@ if input_text:
     st.text(split_text)
     split_text = split_text.replace('-', ' ')
     st.text(split_text)
-    dev_1 = i2d.devn(str(split_text))
+    dev_1 = i2d.devn(str(split_text)).replace("\n", "").split(" ")
     st.text(dev_1)
+    vowel_recognize(dev_1)
+    
+    
+
 
 
 st.caption(" In work is supported by Department of Science and Technology, (DST), Government of India under the project grant DST/TDT/SHRi-14/2021(C). ")
