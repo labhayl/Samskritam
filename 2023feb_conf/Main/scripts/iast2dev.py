@@ -87,6 +87,7 @@ def iast_to_dev(src):
                 boo = False
             else:
                 tgt += vowels[now+nxt][0]
+            inc += 1
         elif now in consonants:
             tgt += consonants[now]
             if nxt == 'a':
