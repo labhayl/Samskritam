@@ -2,8 +2,8 @@ import streamlit as st
 import os 
 import scripts.dev2iast as d2i
 import scripts.iast2dev as i2d
-import scripts.sandhi.vowel_convert as conv
-
+import scripts.sandhi.sandhi_recog.vowel_convert as vc
+import scripts.sandhi.sdn as sd
 
 def sandhi_split(iast_text):
     with open("iast.txt", "w", encoding="utf-8") as f:
@@ -13,11 +13,16 @@ def sandhi_split(iast_text):
         output = f.read()
     return output
 
+def sandhi_final(vowels):
+    str = sd.sandhi_final(vowels[0],vowels[1])
+    return str
+
 def vowel_recognize(words):
-    #first_word = words[0]
-    #last_word = words[1]
-    st.text(words[0],words[1])
-    return 0
+    first_word = words[0]
+    last_word = words[1]
+    temp , vowel1 = vc.vowel_conv(first_word)
+    vowel2 , temp = vc.vowel_conv(last_word)
+    return vowel1 , vowel2
 
 
 
@@ -41,8 +46,8 @@ if input_text:
     st.text(split_text)
     dev_1 = i2d.devn(str(split_text)).replace("\n", "").split(" ")
     st.text(dev_1)
-    vowel_recognize(dev_1)
-    
+    vowels = vowel_recognize(dev_1)
+    st.text(vowels)
     
 
 
