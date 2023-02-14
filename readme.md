@@ -6,5 +6,5 @@
 
 Special thanks to : 
 
-[Vasya/GMtranscendence](https://github.com/GMtranscendence) for helping with iast to devanagari transliteration & other numerous bug fixes. 
-[Architector4](https://github.com/Architector4) for helping with vowel/diactric extraction script
+1. [Vasya/GMtranscendence](https://github.com/GMtranscendence) for helping with iast to devanagari transliteration & other numerous bug fixes. 
+2. [Architector4](https://github.com/Architector4) for helping with vowel/diactric extraction script
