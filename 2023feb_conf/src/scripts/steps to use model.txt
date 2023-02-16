@@ -1,0 +1,8 @@
+pip install tensorflow
+pip install tensorflow-gpu
+
+import tensorflow.compat.v1 as tf 
+tf.disable_v2_behavior()
+
+^ in apply.py & model.py
+
